@@ -26,14 +26,18 @@ The script can scrap by filters. Just replace the coordinate urls in the script.
 
 
 ## 2. CNN
-I used fashionnet pretrained model to train CNN. It has two branches for category and color recognizing.
-But the accuracy is low. I planned to use other PyTorch pretrained model to rewrite this part in the future.
+I used fashionnet pretrained model to train CNN. It has two branches for category and color recognizing. They are: Category/Color of Tops and Bottoms. The categories and colors are scrapped from Wear.jp.
+
+The training accuracy acheived 50% or so out of 10+ categories with branch-training strategy. I wonder splitting the brach from middle layer may achieve better accuracy because the model would share some low-level features at the beginning. Intuitively speaking, the model first learn the features for both tasks (category and color), and after learning the location of object, the model can focus on different tasks on the correct area.
 
 ## 3. LDA/GoM
-The two models are hierarchical bayesian models for extracting features of image and text. They are OK to run, but slowly.
-I plan to implement PyRo to increase the speed.
+The two models are hierarchical bayesian models for extracting features of image and text. They are OK to run, but slowly. I plan to implement PyRo to increase the speed, which uses PyTorch as backend and thus can be computed by GPU.
 
 Basically, I chose TensorFlow as my model's main framework. But in the future, I will go to PyTorch since it is easier to implement and is used as Bayesian inference backend as well.
+
+GoM, Grade of Membership model, is like a hierarchical topic distribution. In this model, each membershio includes a series of different topic distribution for each choice of item category and color. Therefore, GoM can learn concurrence of item selection (i.e. clothe coordinates) and thus it reserves coordinate information.
+
+LDA is used as basic Topic Model to extract coordinate description features.
 
 # Model Plate Diagram
 
