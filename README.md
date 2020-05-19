@@ -40,4 +40,4 @@ Basically, I chose TensorFlow as my model's main framework. But in the future, I
 
 ![The model aims to integrate text and image features together based on Polilingual Topic Model. But I tried to implement image and text feature extraction separately.][graph]
 
-[graph]: https://github.com/yanzhou01/twoLevelLearning/0_etc/preview.svg
+[graph]: https://github.com/yanzhou01/twoLevelLearning/blob/master/0_etc/preview.svg
