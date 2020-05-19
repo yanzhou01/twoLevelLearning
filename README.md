@@ -2,7 +2,7 @@
 This project wants to use long text description as label to extract high level features from images with DNN. The high level features are intended to represent interest of fashion for posters which is latent feature we want to estimate. 
 The research is temporrally paused and I uploaded codes here.
 
-# twoLevelLearning
+# Extracting clothes coordinates features by Image and Text Co-learning strategy
 This python code learns fashion coordinates (from wear.jp) and give two level topics (i.e. image and text) recommendation.
 CNN trains and predicts categories and colors in each coordinate. Then Grade of Membership model extracts the features (memberships) of different choices on colors and categories.
 LDA deals with the text descriptions of coordinates and try to find meaningful topics of these coordinates.
